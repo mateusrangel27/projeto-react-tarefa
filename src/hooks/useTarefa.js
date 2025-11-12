@@ -61,13 +61,32 @@ navigate("/tarefaDetalhes", {state: tarefa})
 
 }
 
+const alterar_tarefa = (tarefa_editada) => {
+
+const novaListaTarefas = listaTarefas.map(tarefa => {
+
+if(tarefa.id === tarefa_editada.id){
+return tarefa_editada
+}else{
+return tarefa
+}
+
+})
+
+setListaTarefas(novaListaTarefas)
+
+alert("Tarefa alterada com sucesso!")
+
+}
+
 return ({
 
 listaTarefas,
 exibirMensagem,
 adicionar_tarefa,
 excluir_tarefa,
-exibir_detalhes_tarefa
+exibir_detalhes_tarefa,
+alterar_tarefa
 
 });
 }
